@@ -4,31 +4,31 @@ const TopButtons = () => {
 
     const cities = [
         {
-            id:"1",
-            name:"london"
+            id:1,
+            title:"London"
         },
         {
-            id:"2",
-            name:"los angeles"
+            id:2,
+            title:"Los Angeles"
         },
         {
-            id:"3",
-            name:"vienna"
+            id:3,
+            title:"Vienna"
         },
         {
-            id:"4",
-            name:"beirut"
+            id:4,
+            title:"Beirut"
         },
         {
-            id:"5",
-            name:"marrakesh"
+            id:5,
+            title:"Marrakesh"
         }
     ]
   return (
-    <div className='flex items-center justify-center my-6'>
+    <div className='flex items-center justify-around my-6'>
         {cities.map((city) => (
-            <button className='text-white text-lg font-medium'>{city.title}</button>
-        ))}
+            <button key={city.id} className='text-white text-lg font-medium'>{city.title}</button>
+        ))} 
     </div>
   )
 }
