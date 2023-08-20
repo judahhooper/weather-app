@@ -1,5 +1,5 @@
 import React from 'react';
-import { UilArrowUp, UilArrowDown, UilTemperature, UilTear, UilWind, UilSun, UilSunset} from "@iconscout/react-unicons";
+import { UilTemperature, UilTear, UilWind, UilSun, UilSunset} from "@iconscout/react-unicons";
 
 const TemperatureAndDetails = () => {
   return ( <div>
@@ -8,7 +8,7 @@ const TemperatureAndDetails = () => {
     </div>
 
     <div className='flex flex-row items-center justify-between text-white py-3'>
-        <img src="/" alt='/' className='w-20'/> 
+        <img src='http://openweathermap.org/img/wn/01d@2x.png' alt='/' className='w-20'/> 
         <p className='text-5xl'>34°C</p>
         <div className='flex flex-col space-y-2'>
 
