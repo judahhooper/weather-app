@@ -22,10 +22,19 @@ const formatCurrentWeather = (data) => {
     } = data;
 
     const {main: details, icon} = weather[0];
-    
-    return {lat, lon, temp, feels_like, temp_min, temp_max, humidity, name, dt, country, sunrise, sunset, weather, speed}
+
+    return {lat, lon, temp, feels_like, temp_min, temp_max, 
+        humidity, name, dt, country, sunrise, sunset, details, icon, speed}
 };
 
 const getFormattedWeatherData = async (searchParams) => {
-    const formattedCurrentWeather = await getWeatherData('weather', searchParams).then(formatCurrentWeather);
-}
+    const formattedCurrentWeather = await getWeatherData
+    ('weather', searchParams).then(formatCurrentWeather);
+    
+    const { lat, lon } = formattedCurrentWeather;
+
+    const formattedForecastWeather = await getWeatherData('onecall', { lat, lon, exclude: 'current, minutely, alerts', units: searchParams.units})
+    return formattedCurrentWeather
+};
+
+export default getFormattedWeatherData;
