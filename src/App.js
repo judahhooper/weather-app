@@ -10,7 +10,7 @@ import getWeatherData from './api-stuff/weatherService';
 function App() {
 
     const fetchWeather = async () => {
-        const data = await getWeatherData();
+        const data = await getWeatherData('weather');
         console.log(data);
     }
 
